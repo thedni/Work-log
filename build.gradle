@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.worklog.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.worklog.app'
+        minSdk 24
+        targetSdk 34
+        versionCode 6
+        versionName '2.4'
+    }
+
+    // A fixed key, so a newer APK can be installed over an older one.
+    signingConfigs {
+        debug {
+            storeFile file('../worklog.jks')
+            storePassword 'worklog123'
+            keyAlias 'worklog'
+            keyPassword 'worklog123'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
